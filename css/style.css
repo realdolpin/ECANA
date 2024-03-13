@@ -1,0 +1,626 @@
+/* padrão */
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.3em 10%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.header-scroll {
+    background-color: #27ae60;
+}
+
+.header::before{
+    content: '';
+    position: absolute;
+    left: -0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .3);
+    backdrop-filter: blur(50px);
+    z-index: -1;
+   
+}
+
+.header::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255, .4), transparent);
+    transition: .5s;
+
+}
+.header:hover:after{
+    left: 100%;
+}
+
+.logo {
+    font-size: 2rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+}
+
+.navbar a {
+    font-size: 1.15rem;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 2.5rem;
+}
+
+#check{
+    display: none;
+}
+
+.icons {
+    font-size: 2.8rem;
+    color: #fff;
+    cursor: pointer;
+    position: absolute;
+    display: none;
+    position: absolute;
+    right: 5%;
+
+    
+}
+/* Estilos para telas menores */
+@media (max-width: 992px) {
+
+    .header{
+        padding: 1.3rem 5%;
+    }
+    
+}
+
+@media (max-width: 768px) {
+
+    .icons{
+        display: inline-flex;
+    }
+
+    #check:checked~.icons #menu-icon{
+        display: none;
+    }
+
+    .icons  #close-icon{
+        display: none;
+    }
+    #check:checked~.icons #close-icon{
+        display: block;
+    }
+
+
+    .navbar{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 0;
+        background: rgba(0, 0, 0, .3);
+        backdrop-filter: blur(50px);
+        box-shadow: 0.5rem 1rem rgba(0, 0, 0, .3);
+        transition: .3s ease;
+        overflow: hidden;
+    }
+
+    #check:checked~.navbar{
+        height: 17.7rem;
+    }
+
+
+    .navbar a{
+        display: block;
+        font-size: 1.1rem;
+        margin: 1.5rem 0;
+        text-align: center;
+        transform: translateY(-50px);
+        transition: .3s ease;
+        opacity: 0;
+
+    }
+
+    #check:checked~.navbar a{
+        transform: translateY(0);
+        transition-delay: calc(.15s *var(--i));
+        opacity: 1;
+    }
+    
+}
+
+
+
+/* Botão de Doar no Header */
+.btn-header,
+.btn-doe {
+    background-color: #27ae60;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 18px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.btn-header:hover,
+.btn-doe:hover {
+    background-color: #219653;
+}
+
+.hero-section {
+    background-image: url('../img/fundo.png');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-section h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-section h4 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-section p {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #fff;
+}
+
+.nossamissao {
+    margin-top: 80px;
+    background-color: #f9f9f9;
+    padding: 50px 0;
+}
+
+.nossamissao-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.nossamissao-image img {
+    width: 350px;
+    height: 5%;
+}
+
+.nossamissao-text {
+    width: 60%;
+    padding-left: 20px;
+    text-align: justify;
+}
+
+.nossamissao-text h5 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.nossamissao-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+}
+
+.oqfazemos {
+    margin-top: 80px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.cardoqfazemos {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.cardoqfazemos img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.cardoqfazemos h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.cardoqfazemos p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+.card {
+    width: 300px;
+    margin: 20px;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.card img {
+    width: 280px;
+    height: 150px;
+    border-radius: 5px;
+    transition: .8s;
+}
+.card img:hover {
+    width: 290px;
+    height: 160px;
+    transition: .3s;
+}
+
+.card h3 {
+    margin-top: 10px;
+    font-size: 20px;
+}
+
+.card p {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #555;
+}
+
+.numeros {
+    margin-top: 80px;
+    background-color: #658371; /* Verde claro */
+    color: #fff; /* Texto branco */
+    font-family: fantasy; /* Fonte fantasy */
+    text-align: center; /* Alinhamento centralizado */
+    padding: 50px 0; /* Espaçamento interno */
+}
+
+.numero-descricao {
+    display: inline-block; /* Exibir em linha */
+    margin: 0 150px; /* Espaçamento horizontal */
+}
+
+.numero {
+    font-size: 40px; /* Tamanho da fonte do número */
+}
+
+.descricao {
+    font-size: 20px; /* Tamanho da fonte da descrição */
+}
+
+.eventos {
+    margin-top: 80px;
+    text-align: center;
+    padding: 50px 0;
+}
+
+.eventos h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hr-verde {
+    border: none;
+    border-top: 2px solid #27ae60; /* Cor verde */
+    width: 80%;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+}
+
+.cardeventos {
+    width: 30%;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.cardeventos h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.cardeventos p {
+    font-size: 16px;
+    color: #555;
+}
+
+.cardeventos img {
+    width: 10%;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.cta {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.banner {
+    background-image: url('../img/banner.jpeg'); 
+    background-size: cover;
+    background-position: center;
+    padding: 50px;
+    border-radius: 10px;
+}
+
+.banner h2 {
+    color: #fff;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.coluna {
+    flex: 1;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.coluna h3 {
+    font-size: 20px;
+    margin-bottom: 20px;
+}
+
+.coluna ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.coluna ul li {
+    margin-bottom: 10px;
+}
+
+.coluna ul li a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.coluna ul li a:hover {
+    color: #27ae60;
+}
+
+.coluna ul li:hover {
+    transform: translateX(5px);
+    transition: transform 0.3s ease;
+}
+
+
+
+
+
+/* Estilos específicos para a página de sobre */
+
+
+.sobre-section{
+    align-items: center;
+    margin-left: 80px;
+    margin-top: 160px;
+    margin-bottom: 80px;
+    text-align: justify;
+    margin-right: 80px;
+}
+.sobre-section .container h2,h3{
+    color: #27ae60;
+
+}
+.sobre-section .container .bloco{
+    background-color: #faf1f1;
+    padding-top: 30px;
+    padding-left: 40px;
+    padding-bottom: 30px;
+    padding-right: 30px;
+    border-radius: 10px;
+}
+.contacto-section{
+    margin-top: 160px;
+    margin-left: 80px;
+    margin-bottom: 80px;
+    margin-right: 80px;
+    display: flex;
+    flex-direction: row-reverse;
+    
+
+}
+.contacto-section .mapa{
+    margin-left: 20%;
+    margin-top: 2%;
+}
+
+.contacto-section .content {
+    font-size: 1.em;
+    font-weight: 600;
+
+}
+.contacto-section .content li{
+    font-weight: 200;
+    font-size: 0.95em;
+    list-style:none;
+}
+.contacto-section .content i{
+    margin-top: 10px;
+    color: #219653;
+}
+
+.contacto-section .contact-form textarea{
+    width: 350px;
+    height: 200px;
+    border-radius: 5px;
+    outline: none;
+
+}
+.contacto-section .contact-form form input{
+    height: 30px;
+    border-radius: 5px;
+    outline: none;
+   
+}
+.contacto-section .contact-form button{
+    width: 80px;
+    height: 35px;
+    border-radius: 5px;
+    border: none;
+    background-color: #27ae60;
+    color: #fff;
+    cursor: pointer;
+}
+.contacto-section .content h1{
+    margin-left: 40%;
+}
+
+
+.doar-section{
+    background-image: url('../img/doar.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+}
+.doar-section .content h2, p{
+    color: #fff;
+}
+
+.doar-section .content .donation-form button{
+    border-radius: 5px;
+    border: none;
+    background-color: #27ae60;
+    color: #fff;
+    cursor: pointer;
+    padding: 15px;
+    height: 40px;
+    width: 90%;
+    align-self:center;
+  
+}
+
+.doar-section .content .donation-form label{
+    margin: 10px;
+    color: #ffffff;
+    border-radius: 5px;
+    width:300px;
+    
+}
+.doar-section .content .donation-form .pagamento label{
+   background-color: #cbffcb;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color:black;
+  
+}
+.doar-section .content .donation-form .pagamento .btn{
+display: none;
+}
+
+.doar-section .content .donation-form .pagamento #btn1:checked + label {
+    background-color: #d5e1ee;
+    color: black;
+}
+
+.doar-section .content .donation-form .pagamento #btn2:checked + label {
+     background-color: #d5e1ee;
+    color: black;
+}
+
+.doar-section .content .donation-form .pagamento #btn3:checked + label {
+    background-color: #d5e1ee;
+    color: black;
+}
+
+.doar-section .content .donation-form .pagamento label:active{
+   cursor:pointer;
+   background-color: #93b993;
+   
+}
+
+.doar-section .content .donation-form input{
+    margin: 10px;
+    border:none;
+    height: 1.8rem;
+    outline: none;
+    background-color: #7c787896;
+    border-radius: 5px;
+    color:white;
+}
+
+.doar-section .content .donation-form {
+    padding: 40px;
+    width: 400px;
+    background-color: rgba(0, 0, 0, .7);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+  
+   
+}
+.eventos-section{
+    margin-top: 10%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 10%;
+    background-color: #27ae60;
+  
+}
