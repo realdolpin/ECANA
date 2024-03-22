@@ -74,6 +74,12 @@ body {
     text-decoration: none;
     font-weight: 500;
     margin-left: 2.5rem;
+    transition: .100s;
+}
+
+.navbar a:hover{
+    color: #219653;
+    transition: .700s;
 }
 
 #check{
@@ -489,7 +495,7 @@ body {
 /* Estilos específicos para a página de sobre */
 
 .sobrehero-section {
-    background-color: #05021b;
+    background-color:#0c531525;
     height: 100vh;
     display: flex;
     flex-direction: row;
@@ -508,6 +514,7 @@ body {
     border-radius: 200px;
     width: 300px;
     height: 300px;
+    border: 6px white solid;
    
     
 
@@ -516,6 +523,7 @@ body {
 
 
 .sobrehero-section .content .imagem{
+   
     margin-top: 100px;
     justify-content: center;
     align-items: center;
@@ -533,20 +541,34 @@ body {
  
 }
 
+.sobrehero-section .letras h4{
+    background-color: #219653;
+    width: 100px;
+    border-radius: 10px;
+    padding: 10px;
+    padding-left: 15px;
+    color: #fff;
+}
+
+.sobrehero-section .letras h4:hover{
+    cursor: pointer;
+}
+
 .sobrehero-section h1 {
     font-size: 36px;
     margin-bottom: 20px;
-    color: #fff;
+    color: #27ae60;
 }
 
 .sobrehero-section p {
     font-size: 18px;
     margin-bottom: 40px;
-    color: #fff;
+    color: #000000;
 }
 
 
 .contacto-section{
+    background-color: #0c531525;
     margin-top: 160px;
     margin-left: 80px;
     margin-bottom: 80px;
@@ -557,13 +579,14 @@ body {
 
 }
 .contacto-section .mapa{
-    margin-left: 40%;
+    margin-left: 36%;
     margin-top: 2%;
 }
 
 .contacto-section .content {
     font-size: 1.em;
     font-weight: 600;
+    margin-right: 20px;
 
 }
 .contacto-section .content li{
@@ -604,7 +627,7 @@ body {
 
 
 .doar-section{
-    background-image: url('../img/doar.jpg');
+    background-image: url('../img/reciclando.jpg');
     background-size: cover;
     background-position: center;
     height: 100vh;
